@@ -1,0 +1,61 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Property App\\Entity\\TwitterAccount\:\:\$twitterAccountId type mapping mismatch\: database can contain string but property expects int\.$#'
+			identifier: doctrine.columnType
+			count: 1
+			path: src/Entity/TwitterAccount.php
+
+		-
+			message: '#^Method App\\Http\\TwitterClient\:\:getUserById\(\) has parameter \$accountId with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Http/TwitterClient.php
+
+		-
+			message: '#^Method App\\Http\\TwitterClient\:\:getUserById\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Http/TwitterClient.php
+
+		-
+			message: '#^Class App\\Repository\\TwitterAccountRepository extends generic class Doctrine\\ORM\\EntityRepository but does not specify its types\: TEntityClass$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Repository/TwitterAccountRepository.php
+
+		-
+			message: '#^Method App\\Repository\\TwitterAccountRepository\:\:addFromArray\(\) has parameter \$userData with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/TwitterAccountRepository.php
+
+		-
+			message: '#^Method App\\Utility\\ArrayHelper\:\:flatten\(\) has parameter \$array with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Utility/ArrayHelper.php
+
+		-
+			message: '#^Method App\\Utility\\ArrayHelper\:\:flatten\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Utility/ArrayHelper.php
+
+		-
+			message: '#^Method App\\Tests\\DatabaseDependantTestCase\:\:assertDatabaseHasEntity\(\) has parameter \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/DatabaseDependantTestCase.php
+
+		-
+			message: '#^Unable to resolve the template type T in call to method Doctrine\\ORM\\EntityManagerInterface\:\:getRepository\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: tests/DatabaseDependantTestCase.php
+
+		-
+			message: '#^Variable \$entityManager might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: tests/DatabaseDependantTestCase.php
